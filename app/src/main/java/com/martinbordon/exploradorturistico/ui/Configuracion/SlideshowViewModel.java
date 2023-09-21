@@ -6,14 +6,22 @@ import androidx.lifecycle.ViewModel;
 
 public class SlideshowViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private MutableLiveData<Integer> tipoMapa = new MutableLiveData<>();
+    private MutableLiveData<String> idioma = new MutableLiveData<>();
 
-    public SlideshowViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    public LiveData<Integer> getTipoMapa() {
+        return tipoMapa;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void setTipoMapa(int tipoMapaSeleccionado) {
+        tipoMapa.setValue(tipoMapaSeleccionado);
+    }
+
+    public LiveData<String> getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(String idiomaSeleccionado) {
+        idioma.setValue(idiomaSeleccionado);
     }
 }

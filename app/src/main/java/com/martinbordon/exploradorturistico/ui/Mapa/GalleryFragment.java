@@ -61,7 +61,7 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onChanged(Location location) {
                 vm.obtenerMap(location.getLongitude(), location.getLatitude());
-                Log.d("pepe", location.getLatitude() +"");
+                Log.d("salida", location.getLatitude() +"");
             }
         });
 

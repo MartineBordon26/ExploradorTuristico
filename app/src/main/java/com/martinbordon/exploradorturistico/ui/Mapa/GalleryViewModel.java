@@ -37,8 +37,8 @@ public class GalleryViewModel extends AndroidViewModel {
     private FusedLocationProviderClient fused;
     private MutableLiveData<Location> mLocation;
     private MutableLiveData<MapaActual> mapaActual;
-    private static final LatLng ACTUAL= new LatLng(-33.280576,-66.332482);
-   // private static final LatLng  ULP = new LatLng(-33.150720,-66306864);
+   // private static final LatLng ACTUAL= new LatLng(-33.280576,-66.332482);
+
     public GalleryViewModel(@NonNull Application application) {
         super(application);
         this.context = application;
@@ -101,8 +101,8 @@ public class GalleryViewModel extends AndroidViewModel {
     }
 
     public class MapaActual implements OnMapReadyCallback{
-        double lo;
-        double la;
+        double lo, la;
+
 
         public  MapaActual(double lo, double la) {
             this.la = la;
@@ -112,9 +112,12 @@ public class GalleryViewModel extends AndroidViewModel {
         @Override
         public void onMapReady(@NonNull GoogleMap googleMap) {
             LatLng ACTUAL= new LatLng(la,lo);
+            LatLng  CATEDRAL = new LatLng(-33.302272367076576, -66.33566853192707);
+            LatLng POTRERO = new LatLng(-33.23299217295592, -66.23202263906278);
             googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
             googleMap.addMarker(new MarkerOptions().position(ACTUAL).title("San Luis"));
-            //googleMap.addMarker(new MarkerOptions().position(ULP).title("ULP"));
+            googleMap.addMarker(new MarkerOptions().position(CATEDRAL).title("Catedral"));
+            googleMap.addMarker(new MarkerOptions().position(POTRERO).title("Potrero"));
             CameraPosition camPos=new CameraPosition.Builder()
                     .target(ACTUAL)
                     .zoom(19)

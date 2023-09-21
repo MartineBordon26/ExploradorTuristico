@@ -100,8 +100,6 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.ViewHolder> 
 
                     intent.putExtras(bundle);
                     v.getContext().startActivity(intent);
-
-
                 }
             });
         }

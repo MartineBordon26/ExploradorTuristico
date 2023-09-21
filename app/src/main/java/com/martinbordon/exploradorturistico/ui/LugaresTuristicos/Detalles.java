@@ -48,7 +48,5 @@ public class Detalles extends AppCompatActivity {
         horaDetalle.setText(hora);
 
 
-
-
     }
     }
